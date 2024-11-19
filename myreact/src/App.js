@@ -5,7 +5,7 @@ import Navbar from './components/Navbar';
 function App() {
   return (
     <>
-  <Navbar title="zuckercats" />
+  <Navbar title="zuba"  linkName="zubamon" />
   </>
   );
 }

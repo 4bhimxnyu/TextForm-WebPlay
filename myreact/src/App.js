@@ -6,8 +6,10 @@ import Textform from './components/Textform';
 function App() {
   return (
     <>
-  <Navbar title="zuba"  linkName="zubamon" />
-  <Textform />
+  <Navbar  />
+  <div className="container">
+  <Textform  heading="enter textform" />
+  </div>
   </>
   );
 }

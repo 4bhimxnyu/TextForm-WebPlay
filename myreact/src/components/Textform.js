@@ -5,7 +5,8 @@ export default function Textform(props) {
 
     const OnClickFun =()=>{
         console.log("onclick button was clicked");
-        setText('you clicked on the button already')
+        let newText = text.toUpperCase();
+        setText(newText); 
     }
 
     const OnChangeFun = (event)=>{

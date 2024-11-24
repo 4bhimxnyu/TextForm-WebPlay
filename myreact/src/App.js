@@ -1,16 +1,16 @@
 
 import './App.css';
-// import About from './components/About';
+import About from './components/About';
 import Navbar from './components/Navbar';
-import Textform from './components/Textform';
+// import Textform from './components/Textform';
 
 function App() {
   return (
     <>
-  <Navbar  />
+  <Navbar  title="TextForm"/>
   <div className="container">
-  <Textform  heading="Text Analysis React App" />
-  {/* <About/> */}
+  {/* <Textform  heading="Text Analysis React App" /> */}
+  <About/>
   </div>
   </>
   );

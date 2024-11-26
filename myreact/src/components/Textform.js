@@ -30,8 +30,8 @@ export default function Textform(props) {
     <div className='container'>
         <h1>{props.heading}</h1>
             <div className="mb-3">
-                <label for="myBox" className="form-label">enter your text here for analysis</label>
-                <textarea className="form-control" id="myBox" rows="3" value={text} onChange={OnChangeFun}>This text will be dynamically changed</textarea>
+                <label htmlFor="myBox" className="form-label">enter your text here for analysis</label>
+                <textarea className="form-control" id="myBox" rows="3" value={text} onChange={OnChangeFun} style={{backgroundColor: props.mode==='dark'?'grey':'light'}}>This text will be dynamically changed</textarea>
             </div>
         <button className="btn btn-primary mx-1" onClick={OnClickFun}>Uppercase</button>
         <button className="btn btn-danger mx-1" onClick={OnclickLower}>Lowercase</button>

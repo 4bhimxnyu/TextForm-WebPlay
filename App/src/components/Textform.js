@@ -6,7 +6,7 @@ export default function Textform(props) {
     const OnClickFun =()=>{
         console.log("onclick button was clicked");
         let newText = text.toUpperCase();
-        setText(newText); 
+        setText(newText);
     }
 
     const OnChangeFun = (event)=>{
@@ -21,8 +21,8 @@ export default function Textform(props) {
 
     const OnclickClear = ()=>{
         let newText = '';
-        setText(newText); 
-    } 
+        setText(newText);
+    }
 
     // const OnclickTrim = ()=>{
     //     if (text.length>0){
@@ -31,7 +31,16 @@ export default function Textform(props) {
     //     setText(newText);
     // }
 
-    
+    // const [firstFont , setFont] = useState('normal');
+    // const fontSwitch = ()=> {
+    //   if(font === 'Normal'){
+    //     setFont = 'Bold';
+    // }
+    // else if(font === 'Bold'){
+    //   setFont = 'Normal';
+    // }
+
+
   return (
     <>
     <div className='container' style={{color:props.mode==='dark'?'white':'black'}}>
@@ -51,11 +60,11 @@ export default function Textform(props) {
             Font
         </button>
         <ul className="dropdown-menu">
-            <li><a className="dropdown-item" href="#">Action</a></li>
-            <li><a className="dropdown-item" href="#">Another action</a></li>
-            <li><a className="dropdown-item" href="#">Something else here</a></li>
+            <li><a className="dropdown-item" href="/">Bold</a></li>
+            <li><a className="dropdown-item" href="/">Normal</a></li>
+            <li><a className="dropdown-item" href="/">Something else here</a></li>
             <li><hr className="dropdown-divider" /></li>
-            <li><a className="dropdown-item" href="#">Separated link</a></li>
+            <li><a className="dropdown-item" href="/">Separated link</a></li>
         </ul>
         </div>
     </div>
@@ -66,7 +75,7 @@ export default function Textform(props) {
         <p>Time taken to Read all the text is {0.008 * text.split(" ").length} seconds</p>
         <h2>Preview</h2>
         <p>{text.length>0?text:"enter something to preview"}</p>
-        
+
     </div>
     </>
   )

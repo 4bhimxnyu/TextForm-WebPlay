@@ -23,6 +23,8 @@ export default function Textform(props) {
         let newText = '';
         setText(newText);
     }
+    
+    
 
     // const OnclickTrim = ()=>{
     //     if (text.length>0){
@@ -35,11 +37,12 @@ export default function Textform(props) {
     // const fontSwitch = ()=> {
     //   if(font === 'Normal'){
     //     setFont = 'Bold';
-    // }
+    // 
     // else if(font === 'Bold'){
     //   setFont = 'Normal';
     // }
 
+    // let's compile
 
   return (
     <>
@@ -56,9 +59,6 @@ export default function Textform(props) {
         {/* <button className="btn btn-alert mx-1 " onClick={InvereCase}>Inverse Case</button> */}
         {/* <!-- Example single danger button --> */}
         <div class="btn-group">
-        <button type="button" className="btn btn-info dropdown-toggle text-white" style={{color:props.mode==='dark'?'white':'black'}} data-bs-toggle="dropdown" aria-expanded="false">
-            Font
-        </button>
         <ul className="dropdown-menu">
             <li><a className="dropdown-item" href="/">Bold</a></li>
             <li><a className="dropdown-item" href="/">Normal</a></li>
@@ -75,6 +75,9 @@ export default function Textform(props) {
         <p>Time taken to Read all the text is {0.008 * text.split(" ").length} seconds</p>
         <h2>Preview</h2>
         <p>{text.length>0?text:"enter something to preview"}</p>
+        {/* style={{color:props.mode==='dark'?'white':'black'}} */}
+
+        
 
     </div>
     </>

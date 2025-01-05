@@ -4,6 +4,7 @@ import './App.css';
 //import About from './components/About';
 import Navbar from './components/Navbar';
 import Textform from './components/Textform';
+import Alert from './components/Alert';
 
 function App() {
 
@@ -19,11 +20,13 @@ function App() {
     }
   }
 
+ 
   return (
     <>
   <Navbar  title="TextForm" mode={mode} toggleMode={toggleMode}/>
+  <Alert alert="This is an alert"/>
   <div className="container">
-  <Textform  heading="Text Analysis React App"  mode={mode}/>
+  <Textform  heading="Text Analysis "  mode={mode}/>
   {/* <About/> */}
   </div>
   </>

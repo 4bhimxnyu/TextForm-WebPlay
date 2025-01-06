@@ -31,6 +31,9 @@ function App() {
         type: type
       }
     ))
+    setTimeout(()=>{
+      setAlert(null);
+    },3000);
   }
 
  
@@ -39,7 +42,7 @@ function App() {
   <Navbar  title="TextForm" mode={mode} toggleMode={toggleMode}/>
   <Alert alert={alert}/>
   <div className="container">
-  <Textform  heading="Text Analysis "  mode={mode}/>
+  <Textform showAlert={showAlert} heading="Text Analysis "  mode={mode}/>
   {/* <About/> */}
   </div>
   </>

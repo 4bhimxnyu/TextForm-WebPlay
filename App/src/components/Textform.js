@@ -7,22 +7,27 @@ export default function Textform(props) {
         console.log("onclick button was clicked");
         let newText = text.toUpperCase();
         setText(newText);
+        props.showAlert("Converted to UpperCase", "success");
     }
 
     const OnChangeFun = (event)=>{
         console.log("onchange event has been called")
-        setText(event.target.value)
+        setText(event.target.value);
+        
     }
 
     const OnclickLower = ()=>{
         let newText = text.toLowerCase();
         setText(newText);
+        props.showAlert("Converted to LowerCase", "success");
     }
 
     const OnclickClear = ()=>{
         let newText = '';
         setText(newText);
+        props.showAlert("Text Cleared", "success");
     }
+
     
     
 
@@ -44,6 +49,8 @@ export default function Textform(props) {
 
     // let's compile
 
+
+
   return (
     <>
     <div className='container' style={{color:props.mode==='dark'?'white':'black'}}>
@@ -58,6 +65,7 @@ export default function Textform(props) {
         {/* <button className="btn btn-success mx-1" onClick={OnclickTrim}>Trim</button> */}
         {/* <button className="btn btn-alert mx-1 " onClick={InvereCase}>Inverse Case</button> */}
         {/* <!-- Example single danger button --> */}
+     
         <div className="btn-group">
         <ul className="dropdown-menu">
             <li><a className="dropdown-item" href="/">Bold</a></li>

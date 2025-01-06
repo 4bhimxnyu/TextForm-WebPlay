@@ -58,7 +58,7 @@ export default function Textform(props) {
         {/* <button className="btn btn-success mx-1" onClick={OnclickTrim}>Trim</button> */}
         {/* <button className="btn btn-alert mx-1 " onClick={InvereCase}>Inverse Case</button> */}
         {/* <!-- Example single danger button --> */}
-        <div class="btn-group">
+        <div className="btn-group">
         <ul className="dropdown-menu">
             <li><a className="dropdown-item" href="/">Bold</a></li>
             <li><a className="dropdown-item" href="/">Normal</a></li>

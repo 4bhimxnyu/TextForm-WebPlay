@@ -1,9 +1,13 @@
 import React from 'react'
 
 function Alert(props){
+    const Capatalize =(word)=>{
+        const lower = word.toLowerCase();
+        return lower.charAt(0).toUpperCase() + lower.slice(1);
+    }
   return (
-    <div className="alert alert-warning alert-dismissible fade show" role="alert">
-        <Strong>{props.alert}</Strong>
+    props.alert && <div className={`alert alert-${props.alert.type} alert-dismissible fade show`} role="alert">
+       <strong>{Capatalize(props.alert.type)} </strong> {props.alert.msg}
         <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
   )

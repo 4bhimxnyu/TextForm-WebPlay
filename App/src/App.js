@@ -14,11 +14,13 @@ function App() {
       setMode('dark')
       document.body.style.backgroundColor='#212530';
       showAlert("changed to Dark mode enabled", "success");
+      document.title = "TextForm - Dark Mode";
     }
     else{
       setMode('light');
       document.body.style.backgroundColor='white';
       showAlert("changed to Light Mode enabled", "success");
+      document.title = "TextForm - Light Mode";
     }
   }
 

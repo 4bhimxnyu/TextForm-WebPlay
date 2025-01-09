@@ -28,6 +28,21 @@ export default function Textform(props) {
         props.showAlert("Text Cleared", "success");
     }
 
+    const OnclickEncode=()=>{
+        let newText = btoa(text);
+        setText(newText)
+        console.log(setText);
+        props.showAlert("The text is Encoded", "success");
+    }
+
+    const OnclickDecode=()=>{
+        let newText = atob(text);
+        setText(newText)
+        console.log(setText);
+        props.showAlert("The text is Decoded", "success");
+    }
+
+
     
     
 
@@ -60,8 +75,10 @@ export default function Textform(props) {
                 <textarea className={`form-control text-${props.mode==='light'?'dark':'light'} `} id="myBox" rows="3" value={text} onChange={OnChangeFun} style={{backgroundColor:props.mode==='dark'?'#212530':'white'}}>This text will be dynamically changed</textarea>
             </div>
         <button className="btn btn-primary mx-1" onClick={OnClickFun}>Uppercase</button>
-        <button className="btn btn-danger mx-1" onClick={OnclickLower}>Lowercase</button>
-        <button className="btn btn-secondary mx-1" onClick={OnclickClear}>Clear</button>
+        <button className="btn btn-primary mx-1" onClick={OnclickLower}>Lowercase</button>
+        <button className="btn btn-primary mx-1" onClick={OnclickClear}>Clear</button>
+        <button className="btn btn-primary mx-1" onClick={OnclickEncode}>Encode</button>
+        <button className="btn btn-primary mx-1" onClick={OnclickDecode}>Decode</button>
         {/* <button className="btn btn-success mx-1" onClick={OnclickTrim}>Trim</button> */}
         {/* <button className="btn btn-alert mx-1 " onClick={InvereCase}>Inverse Case</button> */}
         {/* <!-- Example single danger button --> */}

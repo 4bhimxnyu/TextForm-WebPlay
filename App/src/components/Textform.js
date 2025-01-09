@@ -43,7 +43,31 @@ export default function Textform(props) {
         console.log(setText);
         props.showAlert("The text is Decoded", "success");
     }
+    
 
+    const inverseCase =()=>{
+        let inverse = text;
+        const inversed =(parameter)=>{
+        let word = "";
+        var len = parameter.length;
+        for (let i = 0 ; i < len ; i++ ){
+            let ch = parameter.charCodeAt(i);
+            if(ch >='65' && ch <= '90'){
+                ch = ch.Capatalise();
+            }
+            else{
+                ch = ch + 32;
+            }
+            var inverseChar  = String.fromCharCode(ch);
+            word += inverseChar;
+        }
+        return word;
+    }
+        let newText = inversed(inverse);
+        setText(newText);
+        props.showAlert("Inverse Case is done","success");
+    }
+    
 
 
   return (
@@ -59,10 +83,8 @@ export default function Textform(props) {
         <button className="btn btn-primary mx-1" onClick={OnclickClear}>Clear</button>
         <button className="btn btn-primary mx-1" onClick={OnclickEncode}>Encode</button>
         <button className="btn btn-primary mx-1" onClick={OnclickDecode}>Decode</button>
-        {/* <button className="btn btn-success mx-1" onClick={OnclickTrim}>Trim</button> */}
-        {/* <button className="btn btn-alert mx-1 " onClick={InvereCase}>Inverse Case</button> */}
-        {/* <!-- Example single danger button --> */}
-     
+        <button className="btn btn-primary mx-1" onClick={inverseCase}>Inverse-Case</button>
+        
         <div className="btn-group">
         <ul className="dropdown-menu">
             <li><a className="dropdown-item" href="/">Bold</a></li>

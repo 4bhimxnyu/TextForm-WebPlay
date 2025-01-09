@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 
 import './App.css';
-//import About from './components/About';
+import About from './components/About';
 import Navbar from './components/Navbar';
 import Textform from './components/Textform';
 import Alert from './components/Alert';
@@ -44,8 +44,8 @@ function App() {
   <Navbar  title="TextForm" mode={mode} toggleMode={toggleMode}/>
   <Alert alert={alert}/>
   <div className="container">
-  <Textform showAlert={showAlert} heading="Text Analysis "  mode={mode}/>
-  {/* <About/> */}
+  {/* <Textform showAlert={showAlert} heading="Text Analysis "  mode={mode}/> */}
+  <About/>
   </div>
   </>
   );

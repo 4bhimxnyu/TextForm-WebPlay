@@ -13,7 +13,6 @@ export default function Textform(props) {
     const OnChangeFun = (event)=>{
         console.log("onchange event has been called")
         setText(event.target.value);
-        
     }
 
     const OnclickLower = ()=>{
@@ -36,7 +35,7 @@ export default function Textform(props) {
         props.showAlert("The text is Encoded", "success");
     }
 
-    const OnclickDecode=()=>{
+    const OnclickDecode =()=>{
         let decodedText = atob(text).trim();
         let newText = decodedText;
         setText(newText)
@@ -45,27 +44,35 @@ export default function Textform(props) {
     }
     
 
-    const inverseCase =()=>{
-        let inverse = text;
-        const inversed =(parameter)=>{
-        let word = "";
-        var len = parameter.length;
-        for (let i = 0 ; i < len ; i++ ){
-            let ch = parameter.charCodeAt(i);
-            if(ch >='65' && ch <= '90'){
-                ch = ch.Capatalise();
-            }
-            else{
-                ch = ch + 32;
-            }
-            var inverseChar  = String.fromCharCode(ch);
-            word += inverseChar;
-        }
-        return word;
-    }
-        let newText = inversed(inverse);
-        setText(newText);
-        props.showAlert("Inverse Case is done","success");
+    // const inverseCase =()=>{
+    //     let inverse = text;
+    //     const inversed =(parameter)=>{
+    //     let word = "";
+    //     var len = parameter.length;
+    //     for (let i = 0 ; i < len ; i++ ){
+    //         let ch = parameter.charCodeAt(i);
+    //         if(ch >='65' && ch <= '90'){
+    //             ch = ch.Capatalise();
+    //         }
+    //         else{
+    //             ch = ch + 32;
+    //         }
+    //         var inverseChar  = String.fromCharCode(ch);
+    //         word += inverseChar;
+    //     }
+    //     return word;
+    // }
+    //     let newText = inversed(inverse);
+    //     setText(newText);
+    //     props.showAlert("Inverse Case is done","success");
+    // }
+
+    const copyFun = async () =>{
+        var text = document.getElementById("myBox");
+        text.select();
+        await navigator.clipboard.writeText(text.value);
+        console.log("text has been copied to your clipboard");
+        props.showAlert("Copied to clipboard", "success");
     }
     
 
@@ -83,19 +90,11 @@ export default function Textform(props) {
         <button className="btn btn-primary mx-1" onClick={OnclickClear}>Clear</button>
         <button className="btn btn-primary mx-1" onClick={OnclickEncode}>Encode</button>
         <button className="btn btn-primary mx-1" onClick={OnclickDecode}>Decode</button>
-        <button className="btn btn-primary mx-1" onClick={inverseCase}>Inverse-Case</button>
-        
-        <div className="btn-group">
-        <ul className="dropdown-menu">
-            <li><a className="dropdown-item" href="/">Bold</a></li>
-            <li><a className="dropdown-item" href="/">Normal</a></li>
-            <li><a className="dropdown-item" href="/">Something else here</a></li>
-            <li><hr className="dropdown-divider" /></li>
-            <li><a className="dropdown-item" href="/">Separated link</a></li>
-        </ul>
-        </div>
+        {/* <button className="btn btn-primary mx-1" onClick={inverseCase}>Inverse-Case</button> */}
+        <button className="btn btn-primary mx-1" Onclick={copyFun}>Copy Text</button>
+
     </div>
-    <div className='contain' style={{color:props.mode==='dark'?'white':'black'}}>
+    <div className='contain mt-3' style={{color:props.mode==='dark'?'white':'black'}}>
         <h2>Get the preview of the textForm WebPage</h2>
         <p>Word Count : {text.split(" ").length}</p>
         <p>Number of Characters : {text.length}</p>

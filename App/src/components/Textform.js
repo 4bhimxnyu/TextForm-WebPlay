@@ -29,40 +29,20 @@ export default function Textform(props) {
     }
 
     const OnclickEncode=()=>{
-        let newText = btoa(text);
+        let encodedText = btoa(text).trim();
+        let newText = encodedText;
         setText(newText)
         console.log(setText);
         props.showAlert("The text is Encoded", "success");
     }
 
     const OnclickDecode=()=>{
-        let newText = atob(text);
+        let decodedText = atob(text).trim();
+        let newText = decodedText;
         setText(newText)
         console.log(setText);
         props.showAlert("The text is Decoded", "success");
     }
-
-
-    
-    
-
-    // const OnclickTrim = ()=>{
-    //     if (text.length>0){
-    //         let newText = text.trim();
-    //     }
-    //     setText(newText);
-    // }
-
-    // const [firstFont , setFont] = useState('normal');
-    // const fontSwitch = ()=> {
-    //   if(font === 'Normal'){
-    //     setFont = 'Bold';
-    // 
-    // else if(font === 'Bold'){
-    //   setFont = 'Normal';
-    // }
-
-    // let's compile
 
 
 

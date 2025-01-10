@@ -3,14 +3,20 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Textform from './components/Textform';
+import About from './components/About';
 
-
-
+const router = createBrowserRouter([{
+  path: '/', element: <App />},
+  { path: '/', element: <Textform/>},
+  { path: '/', element: <About/>}
+]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App/>
+      <RouterProvider router={router}/>
   </React.StrictMode>
 );
 

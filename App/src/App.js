@@ -5,6 +5,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Textform from './components/Textform';
 import Alert from './components/Alert';
+import Home from './components/Home';
 
 
 function App() {
@@ -42,10 +43,11 @@ function App() {
  
   return (
     <>
-  <Navbar  title="BlurText" mode={mode} toggleMode={toggleMode}/>
+  <Navbar  title="TextForm" mode={mode} toggleMode={toggleMode}/>
   <Alert alert={alert}/>
   <div className="container">
-  <Textform showAlert={showAlert} heading="Text Analysis"  mode={mode}/>
+  <Home/>
+  {/* <Textform showAlert={showAlert} heading="Text Analysis"  mode={mode}/> */}
   {/* <About/> */}
   </div>
   </>

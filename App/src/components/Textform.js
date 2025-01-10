@@ -79,7 +79,7 @@ export default function Textform(props) {
 
   return (
     <>
-    <div className='container' style={{color:props.mode==='dark'?'white':'black'}}>
+    <div className='container ' style={{color:props.mode==='dark'?'white':'black'}}>
         <h1>{props.heading}</h1>
             <div className="mb-3">
                 <label htmlFor="myBox" className="form-label" >enter your text here for analysis</label>
@@ -94,8 +94,8 @@ export default function Textform(props) {
         {/* <button className="btn btn-primary mx-1" Onclick={copyFun}>Copy Text</button> */}
 
     </div>
-    <div className='contain mt-3' style={{color:props.mode==='dark'?'white':'black'}}>
-        <h2>Get the preview of the textForm WebPage</h2>
+    <div className='contain mt-3 p-3' style={{color:props.mode==='dark'?'white':'black'}}>
+        <h2>Get the preview of the <u>TextForm WebPage</u></h2>
         <p>Word Count : {text.split(" ").length}</p>
         <p>Number of Characters : {text.length}</p>
         <p>Time taken to Read all the text is {0.008 * text.split(" ").length} seconds</p>

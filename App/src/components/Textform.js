@@ -99,7 +99,7 @@ export default function Textform(props) {
         <p>Word Count : {text.split(" ").length}</p>
         <p>Number of Characters : {text.length}</p>
         <p>Time taken to Read all the text is {0.008 * text.split(" ").length} seconds</p>
-        <h2>Preview</h2>
+        <h2><b>Preview</b></h2>
         <p>{text.length>0?text:"enter something to preview"}</p>
         {/* style={{color:props.mode==='dark'?'white':'black'}} */}
 

@@ -5,7 +5,10 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Textform from './components/Textform';
 import Alert from './components/Alert';
+import About from './components/About';
+import { createBrowserRouter , RouterProvider } from 'react-router-dom';
 
+  
 
 
 function App() {
@@ -40,15 +43,20 @@ function App() {
     },3000);
   }
 
+  const router = createBrowserRouter([{path: "/", element:<Textform/>},
+    {path: "/Textform", element: <Textform showAlert={showAlert} heading="Text Analysis"  mode={mode}/> },
+    {path: "/About", element:<About/>},
+  ])
+
  
   return (
     <>
   <Navbar  title="TextForm" mode={mode} toggleMode={toggleMode}/>
   <Alert alert={alert}/>
   <div className="container">
+  <RouterProvider router={router} />
  
-  <Textform showAlert={showAlert} heading="Text Analysis"  mode={mode}/>
-  {/* <About/> */}
+ 
   </div>
   </>
   );
